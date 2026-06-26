@@ -16,11 +16,13 @@ public:
                 if(ch ==')' && top!= '(') return false;
                 if(ch =='}' && top!= '{') return false;
                 if(ch ==']' && top!= '[') return false;
-
+                 st.empty();
             }
         }
 
-        return st.empty();
+       
+        return st.empty()? true: false;
+
         
     }
 };
