@@ -17,11 +17,9 @@ public:
                 if(x != y)
                 {
                     maxh.push(abs(y-x));
-                } else {
-                    maxh.push(0);
                 }
             }
-       return maxh.top();
+       return maxh.empty() ? 0 : maxh.top();
         
     }
 };
