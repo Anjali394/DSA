@@ -4,7 +4,7 @@ public:
         int ans = 0;
         int n = s.size();
         int i=0,j=0;
-        set<int>st;
+        set<char>st;
 
        while(j<n){
             
