@@ -7,11 +7,7 @@ public:
 
        while(j<s.size()){
             mp[s[j]]++;
-
-            if(j-i+1<3){
-                j++;
-            }
-            else if(j-i+1 == 3){
+            if(j-i+1 == 3){
                 if(mp.size() ==3){
                     ans++;
                 }
@@ -20,6 +16,8 @@ public:
                     mp.erase(s[i]);
                 }
                 i++;
+                j++;
+            } else if (j-i+1<3){
                 j++;
             }
         }
