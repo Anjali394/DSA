@@ -11,22 +11,21 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* curr = head;
-        ListNode* prev = NULL;
-        ListNode* nxt = NULL;
+        if(head == NULL || head->next ==NULL)
+            return head;
+        // reverse the rest of linked list and put
+        // the first element at the end
+        ListNode* rest = reverseList(head->next);
 
-        while(curr != NULL){
-            // assign next
-            nxt = curr->next;
-            //reverse link
+        // Make the current head as last node of
+        // remaining linked list
+        head->next->next = head;
 
-            curr->next = prev;
+        // Update next of current head to NULL
+        head->next = NULL;
 
-            // move pointers
-            prev = curr;
-            curr = nxt;
-        }
+        return rest;
 
-        return prev;
+
     }
 };
